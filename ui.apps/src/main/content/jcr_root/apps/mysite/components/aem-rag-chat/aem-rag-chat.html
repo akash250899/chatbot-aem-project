@@ -1,0 +1,36 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='mysite.components.ragchat'}" />
+
+<div class="cmp-rag-chat-wrapper" 
+     data-namespace="${properties.namespace || 'auckland'}"
+     data-api-url="${properties.apiUrl || 'http://localhost:8080/api/rag/ask'}">
+    
+    <button class="cmp-rag-chat__launcher" aria-label="Open Support Chat">
+        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </button>
+
+    <div class="cmp-rag-chat">
+        <div class="cmp-rag-chat__header">
+            <div>
+                <h3 class="cmp-rag-chat__title">Support Assistant</h3>
+                <span class="cmp-rag-chat__status">● Online</span>
+            </div>
+            <button class="cmp-rag-chat__close" aria-label="Close Chat">&times;</button>
+        </div>
+
+        <div class="cmp-rag-chat__window">
+            <div class="cmp-rag-chat__messages">
+                <div class="cmp-rag-chat__message-wrapper cmp-rag-chat__message-wrapper--system">
+                    <div class="cmp-rag-chat__message">Hello! How can I help you today?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cmp-rag-chat__input-area">
+            <input type="text" class="cmp-rag-chat__input" placeholder="Type your question..." aria-label="Chat input" />
+            <button class="cmp-rag-chat__send-btn" aria-label="Send message">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+        </div>
+    </div>
+</div>
